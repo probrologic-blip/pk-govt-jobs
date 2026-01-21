@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PakJobs Pro - Government & Private Employment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pakistan Jobs Portal</title>
     <style>
-        body { font-family: 'Noto Sans', Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; }
-        header { background: #004d00; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav { display: flex; gap: 1rem; }
-        nav a { color: white; text-decoration: none; font-weight: 700; transition: color 0.3s; }
-        nav a:hover { color: #e0ffe0; }
-        .hero { background: url('https://via.placeholder.com/1920x600/009900/ffffff?text=PakJobs+Pro') no-repeat center/cover; padding: 4rem 2rem; text-align: center; color: white; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .search { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
-        .search input, .search select, .search button { padding: 0.75rem; border: none; border-radius: 5px; font-size: 1rem; }
-        .search button { background: #009900; color: white; cursor: pointer; transition: background 0.3s; }
-        .search button:hover { background: #007700; }
-        .tabs { display: flex; justify-content: center; margin: 2rem 0; }
-        .tab { padding: 1rem 2rem; background: #e0ffe0; border: none; cursor: pointer; font-weight: 700; transition: background 0.3s; }
-        .tab.active { background: #009900; color: white; }
-        .jobs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1200px; margin: 0 auto; }
-        .job-card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .job-card:hover { transform: translateY(-5px); }
-        .job-card h3 { color: #004d00; }
-        .job-card p { margin: 0.5rem 0; }
-        .job-card a { display: inline-block; padding: 0.5rem 1rem; background: #009900; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
-        .job-card a:hover { background: #007700; }
-        footer { background: #004d00; color: white; text-align: center; padding: 1rem; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .search { flex-direction: column; align-items: center; } }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .job { border-bottom: 1px solid #ddd; padding: 15px; margin-bottom: 10px; }
+        .job h3 { margin: 0; color: #333; }
+        .job p { margin: 5px 0; }
+        .apply-btn { background-color: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+        .apply-btn:hover { background-color: #218838; }
+        footer { text-align: center; padding: 10px; background-color: #333; color: white; margin-top: 20px; }
+        @media (max-width: 768px) { .container { padding: 10px; } }
     </style>
 </head>
 <body>
     <header>
-        <h1 class="urdu">پاک جابز پرو</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#jobs">Jobs</a>
-            <a href="#resources">Resources</a>
-            <a href="#contact">Contact</a>
-        </
+        <h1>Pakistan Jobs Portal</h1>
+        <p>Latest Government & Private Job Updates</p>
+    </header>
+    
+    <div class="container">
+        <h2>Recent Job Listings</h2>
+        <div id="job-listings">
+            <!-- Mock jobs; replace with dynamic data -->
+            <div class="job">
+                <h3>Government Teacher Position - Punjab Education Department</h3>
+                <p>Location: Lahore | Salary: PKR 50,000 | Deadline: 2023-12-31</p>
+                <button class="apply-btn" onclick="alert('Apply via official site')">Apply Now</button>
+            </div>
+            <div class="job">
+                <h3>Private Software Engineer - TechCorp</h3>
+                <p>Location: Karachi | Salary: PKR 80,000 | Deadline: 2023-11-15</p>
+                <button class="apply-btn" onclick="alert('Apply via official site')">Apply Now</button>
+            </div>
+            <!-- Add more jobs here -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Pakistan Jobs Portal. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Example: Fetch jobs from an API (replace with real endpoint)
+        // fetch('https://api.example.com/jobs')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         const jobList = document.getElementById('job-listings');
+        //         data.forEach(job => {
+        //             const jobDiv = document.createElement('div');
+        //             jobDiv.className = 'job';
+        //             jobDiv.innerHTML = `<h3>${job.title}</h3><p>${job.details}</p><button class="apply-btn">Apply Now</button>`;
+        //             jobList.appendChild(jobDiv);
+        //         });
+        //     });
+    </script>
+</body>
+</html>
