@@ -1,65 +1,209 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PakGovtJobs - Pakistani Government Employment</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background-color: #004d00; color: white; padding: 1rem; text-align: center; }
-        nav { background-color: #009900; padding: 0.5rem; }
-        nav a { color: white; margin: 0 1rem; text-decoration: none; }
-        .hero { background-color: #e0ffe0; padding: 2rem; text-align: center; }
-        .search { margin: 1rem; }
-        .jobs { display: flex; flex-wrap: wrap; justify-content: center; padding: 1rem; }
-        .job-card { background: white; margin: 1rem; padding: 1rem; width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        footer { background-color: #004d00; color: white; text-align: center; padding: 1rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PK Government Jobs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background-color: #f4f6f8; color: #333; }
+
+    /* Header */
+    header {
+      background-color: #0056b3;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 20px;
+      background-color: #e0e0e0;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .tab.active {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    /* Search */
+    .search-box {
+      margin-bottom: 20px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    /* Job Cards */
+    .job-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border-left: 6px solid #0056b3;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .job-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .job-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .job-dept, .job-deadline {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .job-deadline {
+      color: red;
+      font-weight: 500;
+    }
+    .apply-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .apply-btn:hover {
+      background-color: #218838;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background-color: #e0e0e0;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ccc;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .job-card { padding: 15px; }
+      .job-title { font-size: 18px; }
+      .apply-btn { padding: 8px 15px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>PakGovtJobs</h1>
-        <p>آپ کی حکومت کی ملازمتوں کا دروازہ | Your gateway to Pakistani government careers</p>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#jobs">Jobs</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section class="hero">
-        <h2>Search for Pakistani Government Jobs</h2>
-        <div class="search">
-            <input type="text" placeholder="Job title or keyword (e.g., Lecturer)" style="width: 300px; padding: 0.5rem;">
-            <select style="padding: 0.5rem;">
-                <option>Province</option>
-                <option>Punjab</option>
-                <option>Sindh</option>
-                <option>KPK</option>
-                <option>Balochistan</option>
-            </select>
-            <button style="padding: 0.5rem; background: #009900; color: white; border: none;">Search</button>
-        </div>
-    </section>
-    <section class="jobs" id="jobs">
-        <div class="job-card">
-            <h3>Assistant Professor</h3>
-            <p>Federal Public Service Commission (FPSC)</p>
-            <p>Salary: PKR 50,000 - 120,000</p>
-            <p>Deadline: Dec 31, 2023</p>
-            <a href="#">Apply Now</a>
-        </div>
-        <div class="job-card">
-            <h3>Data Analyst (BS-17)</h3>
-            <p>Punjab Public Service Commission (PPSC)</p>
-            <p>Salary: PKR 60,000 - 90,000</p>
-            <p>Deadline: Jan 15, 2024</p>
-            <a href="#">Apply Now</a>
-        </div>
-        <!-- Add more job cards dynamically in a real site -->
-    </section>
-    <footer>
-        <p>&copy; 2023 PakGovtJobs. All rights reserved. | Privacy Policy | Terms of Service | Official Links: <a href="https://www.fpsc.gov.pk" style="color: white;">FPSC</a></p>
-    </footer>
+
+<header>PK Government Jobs</header>
+
+<div class="container">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-filter="all">All Jobs</div>
+    <div class="tab" data-filter="Punjab">Punjab</div>
+    <div class="tab" data-filter="Sindh">Sindh</div>
+    <div class="tab" data-filter="KPK">KPK</div>
+    <div class="tab" data-filter="Balochistan">Balochistan</div>
+    <div class="tab" data-filter="FPSC">FPSC</div>
+    <div class="tab" data-filter="PPSC">PPSC</div>
+    <div class="tab" data-filter="NTS">NTS</div>
+  </div>
+
+  <!-- Search -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search jobs by title or department...">
+  </div>
+
+  <!-- Job List -->
+  <div id="jobList">
+
+    <div class="job-card" data-department="Education" data-province="Punjab">
+      <div class="job-title">Lecturer – Punjab Public School</div>
+      <div class="job-dept">Department: Education</div>
+      <div class="job-deadline">Apply By: 28 Jan 2026</div>
+      <a href="#" class="apply-btn">Apply Now</a>
+    </div>
+
+    <div class="job-card" data-department="Irrigation" data-province="Sindh">
+      <div class="job-title">Assistant Engineer – Sindh Irrigation</div>
+      <div class="job-dept">Department: Irrigation</div>
+      <div class="job-deadline">Apply By: 30 Jan 2026</div>
+      <a href="#" class="apply-btn">Apply Now</a>
+    </div>
+
+    <!-- Add more jobs here -->
+    
+  </div>
+</div>
+
+<footer>© 2026 PK Government Jobs. All rights reserved.</footer>
+
+<script>
+  // Tabs functionality
+  const tabs = document.querySelectorAll('.tab');
+  const jobs = document.querySelectorAll('.job-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+
+      jobs.forEach(job => {
+        if(filter === 'all' || job.dataset.province === filter || job.dataset.department === filter) {
+          job.style.display = 'block';
+        } else {
+          job.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('keyup', () => {
+    const query = searchInput.value.toLowerCase();
+    jobs.forEach(job => {
+      const title = job.querySelector('.job-title').textContent.toLowerCase();
+      const dept = job.querySelector('.job-dept').textContent.toLowerCase();
+      if(title.includes(query) || dept.includes(query)) {
+        job.style.display = 'block';
+      } else {
+        job.style.display = 'none';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
