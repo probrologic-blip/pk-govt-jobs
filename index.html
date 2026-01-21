@@ -6,7 +6,6 @@
   <title>PK Government Jobs</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Roboto', sans-serif; background-color: #f4f6f8; color: #333; }
 
@@ -16,106 +15,76 @@
       color: white;
       padding: 20px 40px;
       text-align: center;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       letter-spacing: 1px;
     }
 
     /* Container */
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
+    .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+
+    /* Featured Slider */
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px 0;
+      margin-bottom: 30px;
+      scroll-behavior: smooth;
     }
+    .slide {
+      min-width: 300px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-left: 6px solid #28a745;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .slide:hover { transform: translateY(-3px); }
+    .slide .job-title { font-size: 18px; font-weight: 600; margin-bottom: 5px; }
+    .slide .job-dept { font-size: 14px; margin-bottom: 5px; color: #555; }
+    .slide .job-deadline { font-size: 14px; color: red; font-weight: 500; }
+    .slide .apply-btn { margin-top: 10px; display: inline-block; background: #28a745; color: white; padding: 8px 15px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+    .slide .apply-btn:hover { background: #218838; }
 
     /* Tabs */
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .tab {
-      padding: 10px 20px;
-      background-color: #e0e0e0;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    .tab.active {
-      background-color: #0056b3;
-      color: white;
-    }
+    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .tab { padding: 10px 20px; background-color: #e0e0e0; border-radius: 6px; cursor: pointer; font-weight: 500; transition: background 0.2s; }
+    .tab.active { background-color: #0056b3; color: white; }
 
     /* Search */
-    .search-box {
-      margin-bottom: 20px;
-    }
-    .search-box input {
-      width: 100%;
-      padding: 12px 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
+    .search-box { margin-bottom: 20px; }
+    .search-box input { width: 100%; padding: 12px 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; }
 
     /* Job Cards */
     .job-card {
       background-color: white;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 15px;
       border-left: 6px solid #0056b3;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      position: relative;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .job-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
-    .job-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    .job-dept, .job-deadline {
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-    .job-deadline {
-      color: red;
-      font-weight: 500;
-    }
-    .apply-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    .apply-btn:hover {
-      background-color: #218838;
-    }
+    .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .job-title { font-size: 20px; font-weight: 600; margin-bottom: 5px; }
+    .job-dept, .job-deadline { font-size: 16px; margin-bottom: 5px; }
+    .job-deadline { color: red; font-weight: 500; }
+    .apply-btn { display: inline-block; margin-top: 10px; padding: 10px 18px; background-color: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
+    .apply-btn:hover { background-color: #218838; }
+
+    /* Badge */
+    .badge { position: absolute; top: 15px; right: 15px; background: #ff4d4f; color: white; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px; }
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background-color: #e0e0e0;
-      font-size: 14px;
-      color: #555;
-      border-top: 1px solid #ccc;
-    }
+    footer { text-align: center; padding: 20px; margin-top: 40px; background-color: #e0e0e0; font-size: 14px; color: #555; border-top: 1px solid #ccc; }
 
     /* Responsive */
     @media (max-width: 600px) {
-      .job-card { padding: 15px; }
+      .job-card, .slide { padding: 15px; }
       .job-title { font-size: 18px; }
       .apply-btn { padding: 8px 15px; }
     }
@@ -126,6 +95,24 @@
 <header>PK Government Jobs</header>
 
 <div class="container">
+
+  <!-- Featured Jobs Slider -->
+  <h2 style="margin-bottom:10px; font-weight:600; color:#0056b3;">🔥 Featured Jobs</h2>
+  <div class="slider" id="featuredSlider">
+    <div class="slide">
+      <div class="job-title">Lecturer – Punjab Public School</div>
+      <div class="job-dept">Department: Education</div>
+      <div class="job-deadline">Apply By: 28 Jan 2026</div>
+      <a href="#" class="apply-btn">Apply Now</a>
+    </div>
+    <div class="slide">
+      <div class="job-title">Assistant Engineer – Sindh Irrigation</div>
+      <div class="job-dept">Department: Irrigation</div>
+      <div class="job-deadline">Apply By: 30 Jan 2026</div>
+      <a href="#" class="apply-btn">Apply Now</a>
+    </div>
+    <!-- Add more featured jobs -->
+  </div>
 
   <!-- Tabs -->
   <div class="tabs">
@@ -148,6 +135,7 @@
   <div id="jobList">
 
     <div class="job-card" data-department="Education" data-province="Punjab">
+      <div class="badge">Urgent</div>
       <div class="job-title">Lecturer – Punjab Public School</div>
       <div class="job-dept">Department: Education</div>
       <div class="job-deadline">Apply By: 28 Jan 2026</div>
@@ -162,14 +150,14 @@
     </div>
 
     <!-- Add more jobs here -->
-    
+
   </div>
 </div>
 
 <footer>© 2026 PK Government Jobs. All rights reserved.</footer>
 
 <script>
-  // Tabs functionality
+  // Tabs
   const tabs = document.querySelectorAll('.tab');
   const jobs = document.querySelectorAll('.job-card');
 
@@ -189,7 +177,7 @@
     });
   });
 
-  // Search functionality
+  // Search
   const searchInput = document.getElementById('searchInput');
   searchInput.addEventListener('keyup', () => {
     const query = searchInput.value.toLowerCase();
