@@ -1,197 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-7">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PK Government Jobs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background-color: #f4f6f8; color: #333; }
-
-    /* Header */
-    header {
-      background-color: #0056b3;
-      color: white;
-      padding: 20px 40px;
-      text-align: center;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    /* Container */
-    .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-
-    /* Featured Slider */
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      padding: 10px 0;
-      margin-bottom: 30px;
-      scroll-behavior: smooth;
-    }
-    .slide {
-      min-width: 300px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-left: 6px solid #28a745;
-      flex-shrink: 0;
-      transition: transform 0.2s;
-    }
-    .slide:hover { transform: translateY(-3px); }
-    .slide .job-title { font-size: 18px; font-weight: 600; margin-bottom: 5px; }
-    .slide .job-dept { font-size: 14px; margin-bottom: 5px; color: #555; }
-    .slide .job-deadline { font-size: 14px; color: red; font-weight: 500; }
-    .slide .apply-btn { margin-top: 10px; display: inline-block; background: #28a745; color: white; padding: 8px 15px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
-    .slide .apply-btn:hover { background: #218838; }
-
-    /* Tabs */
-    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-    .tab { padding: 10px 20px; background-color: #e0e0e0; border-radius: 6px; cursor: pointer; font-weight: 500; transition: background 0.2s; }
-    .tab.active { background-color: #0056b3; color: white; }
-
-    /* Search */
-    .search-box { margin-bottom: 20px; }
-    .search-box input { width: 100%; padding: 12px 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; }
-
-    /* Job Cards */
-    .job-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border-left: 6px solid #0056b3;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .job-title { font-size: 20px; font-weight: 600; margin-bottom: 5px; }
-    .job-dept, .job-deadline { font-size: 16px; margin-bottom: 5px; }
-    .job-deadline { color: red; font-weight: 500; }
-    .apply-btn { display: inline-block; margin-top: 10px; padding: 10px 18px; background-color: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
-    .apply-btn:hover { background-color: #218838; }
-
-    /* Badge */
-    .badge { position: absolute; top: 15px; right: 15px; background: #ff4d4f; color: white; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px; }
-
-    /* Footer */
-    footer { text-align: center; padding: 20px; margin-top: 40px; background-color: #e0e0e0; font-size: 14px; color: #555; border-top: 1px solid #ccc; }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .job-card, .slide { padding: 15px; }
-      .job-title { font-size: 18px; }
-      .apply-btn { padding: 8px 15px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PakJobs Pro - Government & Private Employment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans', Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; }
+        header { background: #004d00; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { display: flex; gap: 1rem; }
+        nav a { color: white; text-decoration: none; font-weight: 700; transition: color 0.3s; }
+        nav a:hover { color: #e0ffe0; }
+        .hero { background: url('https://via.placeholder.com/1920x600/009900/ffffff?text=PakJobs+Pro') no-repeat center/cover; padding: 4rem 2rem; text-align: center; color: white; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .search { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+        .search input, .search select, .search button { padding: 0.75rem; border: none; border-radius: 5px; font-size: 1rem; }
+        .search button { background: #009900; color: white; cursor: pointer; transition: background 0.3s; }
+        .search button:hover { background: #007700; }
+        .tabs { display: flex; justify-content: center; margin: 2rem 0; }
+        .tab { padding: 1rem 2rem; background: #e0ffe0; border: none; cursor: pointer; font-weight: 700; transition: background 0.3s; }
+        .tab.active { background: #009900; color: white; }
+        .jobs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        .job-card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .job-card:hover { transform: translateY(-5px); }
+        .job-card h3 { color: #004d00; }
+        .job-card p { margin: 0.5rem 0; }
+        .job-card a { display: inline-block; padding: 0.5rem 1rem; background: #009900; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
+        .job-card a:hover { background: #007700; }
+        footer { background: #004d00; color: white; text-align: center; padding: 1rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .search { flex-direction: column; align-items: center; } }
+    </style>
 </head>
 <body>
-
-<header>PK Government Jobs</header>
-
-<div class="container">
-
-  <!-- Featured Jobs Slider -->
-  <h2 style="margin-bottom:10px; font-weight:600; color:#0056b3;">🔥 Featured Jobs</h2>
-  <div class="slider" id="featuredSlider">
-    <div class="slide">
-      <div class="job-title">Lecturer – Punjab Public School</div>
-      <div class="job-dept">Department: Education</div>
-      <div class="job-deadline">Apply By: 28 Jan 2026</div>
-      <a href="#" class="apply-btn">Apply Now</a>
-    </div>
-    <div class="slide">
-      <div class="job-title">Assistant Engineer – Sindh Irrigation</div>
-      <div class="job-dept">Department: Irrigation</div>
-      <div class="job-deadline">Apply By: 30 Jan 2026</div>
-      <a href="#" class="apply-btn">Apply Now</a>
-    </div>
-    <!-- Add more featured jobs -->
-  </div>
-
-  <!-- Tabs -->
-  <div class="tabs">
-    <div class="tab active" data-filter="all">All Jobs</div>
-    <div class="tab" data-filter="Punjab">Punjab</div>
-    <div class="tab" data-filter="Sindh">Sindh</div>
-    <div class="tab" data-filter="KPK">KPK</div>
-    <div class="tab" data-filter="Balochistan">Balochistan</div>
-    <div class="tab" data-filter="FPSC">FPSC</div>
-    <div class="tab" data-filter="PPSC">PPSC</div>
-    <div class="tab" data-filter="NTS">NTS</div>
-  </div>
-
-  <!-- Search -->
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search jobs by title or department...">
-  </div>
-
-  <!-- Job List -->
-  <div id="jobList">
-
-    <div class="job-card" data-department="Education" data-province="Punjab">
-      <div class="badge">Urgent</div>
-      <div class="job-title">Lecturer – Punjab Public School</div>
-      <div class="job-dept">Department: Education</div>
-      <div class="job-deadline">Apply By: 28 Jan 2026</div>
-      <a href="#" class="apply-btn">Apply Now</a>
-    </div>
-
-    <div class="job-card" data-department="Irrigation" data-province="Sindh">
-      <div class="job-title">Assistant Engineer – Sindh Irrigation</div>
-      <div class="job-dept">Department: Irrigation</div>
-      <div class="job-deadline">Apply By: 30 Jan 2026</div>
-      <a href="#" class="apply-btn">Apply Now</a>
-    </div>
-
-    <!-- Add more jobs here -->
-
-  </div>
-</div>
-
-<footer>© 2026 PK Government Jobs. All rights reserved.</footer>
-
-<script>
-  // Tabs
-  const tabs = document.querySelectorAll('.tab');
-  const jobs = document.querySelectorAll('.job-card');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const filter = tab.dataset.filter;
-
-      jobs.forEach(job => {
-        if(filter === 'all' || job.dataset.province === filter || job.dataset.department === filter) {
-          job.style.display = 'block';
-        } else {
-          job.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // Search
-  const searchInput = document.getElementById('searchInput');
-  searchInput.addEventListener('keyup', () => {
-    const query = searchInput.value.toLowerCase();
-    jobs.forEach(job => {
-      const title = job.querySelector('.job-title').textContent.toLowerCase();
-      const dept = job.querySelector('.job-dept').textContent.toLowerCase();
-      if(title.includes(query) || dept.includes(query)) {
-        job.style.display = 'block';
-      } else {
-        job.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
+    <header>
+        <h1 class="urdu">پاک جابز پرو</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#jobs">Jobs</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
+        </
