@@ -3,38 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakistan Jobs Portal</title>
+    <title>Pakistan Jobs Portal - Animated</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
-        .container { max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .job { border-bottom: 1px solid #ddd; padding: 15px; margin-bottom: 10px; }
-        .job h3 { margin: 0; color: #333; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: #333; 
+            animation: fadeIn 1s ease-in; 
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        header { 
+            background-color: rgba(0, 123, 255, 0.9); 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+            animation: slideIn 1.5s ease-out; 
+        }
+        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 20px auto; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1); 
+            animation: fadeInUp 1s ease-out 0.5s both; 
+        }
+        @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .search-bar { 
+            margin-bottom: 20px; 
+            text-align: center; 
+        }
+        .search-bar input { 
+            padding: 10px; 
+            width: 70%; 
+            border: 2px solid #ddd; 
+            border-radius: 25px; 
+            transition: all 0.3s; 
+        }
+        .search-bar input:focus { 
+            border-color: #007bff; 
+            box-shadow: 0 0 10px rgba(0,123,255,0.3); 
+        }
+        
+        .job { 
+            border-bottom: 1px solid #eee; 
+            padding: 20px; 
+            margin-bottom: 15px; 
+            border-radius: 8px; 
+            background: #f9f9f9; 
+            transition: all 0.3s ease; 
+            animation: fadeInUp 0.8s ease-out both; 
+            animation-delay: calc(var(--delay) * 0.1s); 
+        }
+        .job:hover { 
+            transform: scale(1.02); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+        }
+        .job h3 { 
+            margin: 0; 
+            color: #007bff; 
+            transition: color 0.3s; 
+        }
+        .job h3:hover { color: #0056b3; }
         .job p { margin: 5px 0; }
-        .apply-btn { background-color: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
-        .apply-btn:hover { background-color: #218838; }
-        footer { text-align: center; padding: 10px; background-color: #333; color: white; margin-top: 20px; }
-        @media (max-width: 768px) { .container { padding: 10px; } }
+        
+        .apply-btn { 
+            background: linear-gradient(45deg, #28a745, #20c997); 
+            color: white; 
+            padding: 12px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+            box-shadow: 0 4px 15px rgba(40,167,69,0.3); 
+        }
+        .apply-btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(40,167,69,0.4); 
+        }
+        
+        .loading { 
+            display: none; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        .spinner { 
+            border: 4px solid #f3f3f3; 
+            border-top: 4px solid #007bff; 
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px; 
+            animation: spin 1s linear infinite; 
+            margin: 0 auto; 
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        footer { 
+            text-align: center; 
+            padding: 15px; 
+            background: #333; 
+            color: white; 
+            margin-top: 20px; 
+            animation: fadeIn 2s ease-in; 
+        }
+        
+        @media (max-width: 768px) { 
+            .container { padding: 10px; } 
+            .search-bar input { width: 90%; } 
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Pakistan Jobs Portal</h1>
-        <p>Latest Government & Private Job Updates</p>
+        <p>Latest Government & Private Job Updates with Professional Animations</p>
     </header>
     
     <div class="container">
         <h2>Recent Job Listings</h2>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search jobs by title, location, or type...">
+        </div>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading jobs...</p>
+        </div>
         <div id="job-listings">
-            <!-- Mock jobs; replace with dynamic data -->
-            <div class="job">
+            <!-- Mock jobs with animation delays -->
+            <div class="job" style="--delay: 1;">
                 <h3>Government Teacher Position - Punjab Education Department</h3>
                 <p>Location: Lahore | Salary: PKR 50,000 | Deadline: 2023-12-31</p>
                 <button class="apply-btn" onclick="alert('Apply via official site')">Apply Now</button>
             </div>
-            <div class="job">
+            <div class="job" style="--delay: 2;">
                 <h3>Private Software Engineer - TechCorp</h3>
                 <p>Location: Karachi | Salary: PKR 80,000 | Deadline: 2023-11-15</p>
+                <button class="apply-btn" onclick="alert('Apply via official site')">Apply Now</button>
+            </div>
+            <div class="job" style="--delay: 3;">
+                <h3>Government Clerk - Federal Public Service Commission</h3>
+                <p>Location: Islamabad | Salary: PKR 45,000 | Deadline: 2023-10-20</p>
                 <button class="apply-btn" onclick="alert('Apply via official site')">Apply Now</button>
             </div>
             <!-- Add more jobs here -->
@@ -46,14 +160,36 @@
     </footer>
     
     <script>
-        // Example: Fetch jobs from an API (replace with real endpoint)
+        // Search functionality
+        const searchInput = document.getElementById('search');
+        const jobs = document.querySelectorAll('.job');
+        
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            jobs.forEach(job => {
+                const text = job.textContent.toLowerCase();
+                job.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        });
+        
+        // Simulate loading (for demo; replace with real API fetch)
+        const loading = document.getElementById('loading');
+        loading.style.display = 'block';
+        setTimeout(() => {
+            loading.style.display = 'none';
+        }, 1000);
+        
+        // Example: Fetch jobs from an API with loading animation
+        // const jobList = document.getElementById('job-listings');
+        // loading.style.display = 'block';
         // fetch('https://api.example.com/jobs')
         //     .then(response => response.json())
         //     .then(data => {
-        //         const jobList = document.getElementById('job-listings');
-        //         data.forEach(job => {
+        //         loading.style.display = 'none';
+        //         data.forEach((job, index) => {
         //             const jobDiv = document.createElement('div');
         //             jobDiv.className = 'job';
+        //             jobDiv.style.setProperty('--delay', index + 1);
         //             jobDiv.innerHTML = `<h3>${job.title}</h3><p>${job.details}</p><button class="apply-btn">Apply Now</button>`;
         //             jobList.appendChild(jobDiv);
         //         });
