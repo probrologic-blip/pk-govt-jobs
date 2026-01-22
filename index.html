@@ -1,50 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakistan Jobs Portal - Home</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; animation: fadeIn 1s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        nav { background: rgba(0,123,255,0.9); padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; transition: color 0.3s; }
-        nav a:hover { color: #ffd700; }
-        .container { max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); animation: fadeInUp 1s ease-out 0.5s both; }
-        @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .job { border-bottom: 1px solid #eee; padding: 20px; margin-bottom: 15px; border-radius: 8px; background: #f9f9f9; transition: all 0.3s ease; animation: fadeInUp 0.8s ease-out both; animation-delay: calc(var(--delay) * 0.1s); }
-        .job:hover { transform: scale(1.02); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-        .job h3 { margin: 0; color: #007bff; }
-        .job p { margin: 5px 0; }
-        .apply-btn { background: linear-gradient(45deg, #28a745, #20c997); color: white; padding: 12px 20px; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s; }
-        .apply-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(40,167,69,0.4); }
-        footer { text-align: center; padding: 15px; background: #333; color: white; margin-top: 20px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PK Government Jobs – Latest Jobs in Pakistan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+body{
+  background:#f4f6f9;
+  color:#333;
+}
+header{
+  background:#0b5ed7;
+  padding:20px;
+  color:#fff;
+}
+header h1{
+  font-size:26px;
+}
+header p{
+  font-size:14px;
+  opacity:0.9;
+}
+nav{
+  background:#084298;
+}
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  justify-content:center;
+}
+nav ul li{
+  padding:12px 18px;
+}
+nav ul li a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+nav ul li a:hover{
+  text-decoration:underline;
+}
+
+.container{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 15px;
+}
+
+.section-title{
+  font-size:22px;
+  margin-bottom:15px;
+  color:#0b5ed7;
+}
+
+.jobs{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.job-card{
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  position:relative;
+}
+.job-card h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+.job-card p{
+  font-size:14px;
+  margin-bottom:6px;
+}
+.apply{
+  margin-top:12px;
+}
+.apply a{
+  display:inline-block;
+  padding:8px 15px;
+  background:#0b5ed7;
+  color:#fff;
+  border-radius:5px;
+  text-decoration:none;
+  font-size:14px;
+}
+.apply a:hover{
+  background:#084298;
+}
+
+footer{
+  background:#0b5ed7;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+  margin-top:40px;
+  font-size:14px;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:22px;
+  }
+}
+</style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="punjab.html">Punjab</a>
-        <a href="sindh.html">Sindh</a>
-        <a href="kpk.html">KPK</a>
-        <a href="balochistan.html">Balochistan</a>
-        <a href="islamabad.html">Islamabad</a>
-    </nav>
-    <div class="container">
-        <h1>Welcome to Pakistan Jobs Portal</h1>
-        <p>Find the latest government and private job updates across all provinces. Browse by region below!</p>
-        <h2>Featured Jobs</h2>
-        <div class="job" style="--delay: 1;">
-            <h3>Government Teacher - Nationwide</h3>
-            <p>Location: Various | Salary: PKR 50,000+ | Deadline: Ongoing</p>
-            <button class="apply-btn" onclick="alert('Apply via official site')">Apply Now</button>
-        </div>
-        <div class="job" style="--delay: 2;">
-            <h3>Private Engineer - Tech Sector</h3>
-            <p>Location: Major Cities | Salary: PKR 70,000+ | Deadline: 2023-12-15</p>
-            <button class="apply-btn" onclick="alert('Apply via official site')">Apply Now</button>
-        </div>
+
+<header>
+  <h1>PK Government Jobs</h1>
+  <p>Latest Pakistani Government Jobs Updated Daily</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">All Jobs</a></li>
+    <li><a href="#">Punjab</a></li>
+    <li><a href="#">Sindh</a></li>
+    <li><a href="#">KPK</a></li>
+    <li><a href="#">Balochistan</a></li>
+    <li><a href="#">FPSC</a></li>
+    <li><a href="#">PPSC</a></li>
+    <li><a href="#">NTS</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h2 class="section-title">Latest Government Jobs</h2>
+
+  <div class="jobs">
+
+    <div class="job-card">
+      <h3>Lecturer – Punjab Public School</h3>
+      <p><b>Department:</b> Education</p>
+      <p><b>Apply By:</b> 28 Jan 2026</p>
+      <div class="apply">
+        <a href="#">Apply Now</a>
+      </div>
     </div>
-    <footer>&copy; 2023 Pakistan Jobs Portal. All rights reserved.</footer>
+
+    <div class="job-card">
+      <h3>Assistant Engineer – Sindh Irrigation</h3>
+      <p><b>Department:</b> Irrigation</p>
+      <p><b>Apply By:</b> 30 Jan 2026</p>
+      <div class="apply">
+        <a href="#">Apply Now</a>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <h3>Clerk – Federal Board</h3>
+      <p><b>Department:</b> FPSC</p>
+      <p><b>Apply By:</b> 02 Feb 2026</p>
+      <div class="apply">
+        <a href="#">Apply Now</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 PK Government Jobs | All Rights Reserved
+</footer>
+
 </body>
 </html>
