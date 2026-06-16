@@ -1,20 +1,21 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaK Government Jobs</title>
     <style>
-        /* CSS Styling - Aapke Colors aur Layout ke mutabiq */
+        /* CSS Styling - Default Colors */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f6f9;
+            color: #000000;
         }
         /* Header Section */
         .header {
-            background-color: #157a4e; /* Green Color */
+            background-color: #157a4e; 
             color: white;
             text-align: center;
             padding: 20px 10px;
@@ -37,24 +38,7 @@
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-        } body.dark {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-body.dark .job-card {
-    background-color: #2d2d2d;
-}
-body.dark .job-card h3 {
-    color: #ffffff;
-}
-body.dark .job-card p {
-    color: #ccc;
-}
-body.dark .search-container input {
-    background-color: #2d2d2d;
-    color: white;
-    border: 1px solid #444;
-}
+        }
         /* Navigation Links / Top Tabs */
         .nav-tabs {
             background-color: #11643f;
@@ -87,6 +71,8 @@ body.dark .search-container input {
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 14px;
+            background-color: white;
+            color: black;
         }
         .search-container button {
             background-color: #157a4e;
@@ -145,6 +131,26 @@ body.dark .search-container input {
             cursor: pointer;
             margin-top: 10px;
             font-size: 14px;
+        }
+
+        /* 🌙 DARK MODE STYLES HERE 🌙 */
+        body.dark {
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
+        }
+        body.dark .job-card {
+            background-color: #2d2d2d !important;
+        }
+        body.dark .job-card h3 {
+            color: #ffffff !important;
+        }
+        body.dark .job-card p {
+            color: #ccc !important;
+        }
+        body.dark .search-container input {
+            background-color: #2d2d2d !important;
+            color: white !important;
+            border: 1px solid #444 !important;
         }
     </style>
 </head>
@@ -209,15 +215,14 @@ body.dark .search-container input {
         const searchInput = document.getElementById('jobSearch');
         const jobCards = document.querySelectorAll('.job-card');
         const filterButtons = document.querySelectorAll('.filter-btn');
+        const darkModeToggle = document.getElementById('darkModeToggle');
 
         // 1. Search Bar Functionality
         searchInput.addEventListener('input', function() {
             const searchText = searchInput.value.toLowerCase();
-
             jobCards.forEach(card => {
                 const title = card.querySelector('h3').innerText.toLowerCase();
                 const dept = card.querySelector('p').innerText.toLowerCase();
-
                 if (title.includes(searchText) || dept.includes(searchText)) {
                     card.style.display = "block";
                 } else {
@@ -229,15 +234,11 @@ body.dark .search-container input {
         // 2. Filter Buttons Functionality
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
-                // Active button ka style change karne ke liye
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-
                 const target = button.getAttribute('data-target');
-
                 jobCards.forEach(card => {
                     const cardProvince = card.getAttribute('data-province');
-
                     if (target === 'all' || cardProvince === target) {
                         card.style.display = "block";
                     } else {
@@ -246,19 +247,17 @@ body.dark .search-container input {
                 });
             });
         });
+
+        // 3. Dark Mode Functionality
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                darkModeToggle.innerHTML = "☀️ Light Mode";
+            } else {
+                darkModeToggle.innerHTML = "🌙 Dark Mode";
+            }
+        });
     </script>
 
 </body>
 </html>
-// 3. Dark Mode Functionality
-const darkModeToggle = document.getElementById('darkModeToggle');
-
-darkModeToggle.addEventListener('click', function() {
-    document.body.classList.toggle('dark');
-    
-    if (document.body.classList.contains('dark')) {
-        darkModeToggle.innerHTML = "☀️ Light Mode";
-    } else {
-        darkModeToggle.innerHTML = "🌙 Dark Mode";
-    }
-});
