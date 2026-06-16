@@ -1,192 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="description" content="Latest Pakistan Government Jobs 2026. Daily updates of Punjab, Sindh, KPK, Balochistan, FPSC, PPSC jobs.">
-<meta name="keywords" content="PK Government Jobs, Pakistan Jobs, Punjab Jobs, FPSC Jobs, PPSC Jobs, Govt Jobs Pakistan">
-<meta name="author" content="PK Government Jobs">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PaK Government Jobs</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-body{background:#f4f6f9;color:#111;}
-
-/* HEADER + NAV */
-header{background:#198754;color:#fff;padding:20px;text-align:center;}
-nav{background:#146c43;}
-nav ul{display:flex;flex-wrap:wrap;justify-content:center;list-style:none;}
-nav ul li{padding:12px 16px;}
-nav ul li a{color:#fff;text-decoration:none;font-size:14px;}
-
-/* LAYOUT */
-.container{max-width:1100px;margin:25px auto;padding:0 15px;}
-
-/* SEARCH */
-.search-box{
-  background:#fff;
-  padding:15px;
-  border-radius:8px;
-  display:flex;
-  gap:10px;
-  margin-bottom:20px;
-}
-.search-box input{
-  flex:1;
-  padding:10px;
-  border:1px solid #ccc;
-  border-radius:5px;
-}
-.search-box button{
-  background:#198754;
-  color:#fff;
-  border:none;
-  padding:10px 18px;
-  border-radius:5px;
-  cursor:pointer;
-}
-
-/* FILTERS */
-.filters button{
-  margin:5px;
-  padding:8px 14px;
-  border:none;
-  background:#dee2e6;
-  border-radius:20px;
-  cursor:pointer;
-}
-.filters button.active{
-  background:#198754;
-  color:#fff;
-}
-
-/* JOB CARDS */
-.jobs{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-}
-.job-card{
-  background:#fff;
-  padding:20px;
-  border-radius:8px;
-  box-shadow:0 5px 12px rgba(0,0,0,.1);
-}
-.job-card h3{font-size:18px;margin-bottom:6px;}
-.job-card p{font-size:14px;margin:4px 0;}
-.job-card a{
-  display:inline-block;
-  margin-top:10px;
-  background:#198754;
-  color:#fff;
-  padding:8px 14px;
-  border-radius:5px;
-  text-decoration:none;
-}
-
-/* 🌙 DARK MODE */
-body.dark{background:#0f172a;color:#e5e7eb;}
-body.dark header{background:#064e3b;}
-body.dark nav{background:#052e24;}
-body.dark .search-box,
-body.dark .job-card{background:#020617;color:#e5e7eb;}
-body.dark input{background:#020617;color:#e5e7eb;border:1px solid #334155;}
-body.dark .filters button{background:#1e293b;color:#cbd5e1;}
-body.dark .filters button.active{background:#198754;color:#fff;}
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaK Government Jobs</title>
+    <style>
+        /* CSS Styling - Aapke Colors aur Layout ke mutabiq */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+        }
+        /* Header Section */
+        .header {
+            background-color: #157a4e; /* Green Color */
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0 15px 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        /* Dark Mode Button */
+        .dark-mode-btn {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        /* Navigation Links / Top Tabs */
+        .nav-tabs {
+            background-color: #11643f;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .nav-tabs a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        /* Main Container */
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        /* Search Section */
+        .search-container {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        .search-container input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .search-container button {
+            background-color: #157a4e;
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        /* Filter Buttons Pill Style */
+        .filter-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+        .filter-btn {
+            background-color: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .filter-btn.active {
+            background-color: #157a4e;
+            color: white;
+        }
+        /* Job Card Style */
+        .job-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .job-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #000;
+        }
+        .job-card p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        .view-btn {
+            background-color: #157a4e;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h2>PaK Government Jobs</h2>
-  <p>Latest Government Jobs in Pakistan</p>
+    <div class="header">
+        <h1>PaK Government Jobs</h1>
+        <p>Latest Government Jobs in Pakistan</p>
+        <button class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
 
-  <button onclick="toggleDark()" style="
-  margin-top:10px;
-  padding:6px 14px;
-  background:#fff;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-  font-size:13px;">
-  🌙 Dark Mode
-  </button>
-</header>
+    <div class="nav-tabs">
+        <a href="index.html">All Jobs</a>
+        <a href="punjab.html">Punjab</a>
+        <a href="sindh.html">Sindh</a>
+        <a href="kpk.html">KPK</a>
+        <a href="islamabad.html">Islamabad</a>
+    </div>
 
-<nav>
-<ul>
-  <li><a href="index.html">All Jobs</a></li>
-  <li><a href="punjab.html">Punjab</a></li>
-  <li><a href="sindh.html">Sindh</a></li>
-  <li><a href="kpk.html">KPK</a></li>
-  <li><a href="islamabad.html">Islamabad</a></li>
-</ul>
-</nav>
+    <div class="container">
 
-<div class="container">
+        <div class="search-container">
+            <input type="text" id="jobSearch" placeholder="Search job title or department...">
+            <button>Search</button>
+        </div>
 
-<div class="search-box">
-  <input type="text" id="search" placeholder="Search job title or department">
-  <button onclick="searchJobs()">Search</button>
-</div>
+        <div class="filter-container">
+            <button class="filter-btn active" data-target="all">All</button>
+            <button class="filter-btn" data-target="punjab">Punjab</button>
+            <button class="filter-btn" data-target="sindh">Sindh</button>
+            <button class="filter-btn" data-target="kpk">KPK</button>
+            <button class="filter-btn" data-target="islamabad">Islamabad</button>
+        </div>
 
-<div class="filters">
-  <button class="active" onclick="filterJobs('all',this)">All</button>
-  <button onclick="filterJobs('Punjab',this)">Punjab</button>
-  <button onclick="filterJobs('Sindh',this)">Sindh</button>
-  <button onclick="filterJobs('FPSC',this)">FPSC</button>
-</div>
+        <div id="jobsList">
+            
+            <div class="job-card" data-province="punjab">
+                <h3>Lecturer – Punjab Public School</h3>
+                <p><strong>Department:</strong> Education</p>
+                <p><strong>Last Date:</strong> 28 Jan 2026</p>
+                <button class="view-btn">View Details</button>
+            </div>
 
-<div class="jobs" id="jobs">
+            <div class="job-card" data-province="sindh">
+                <h3>Assistant Engineer – Sindh Irrigation</h3>
+                <p><strong>Department:</strong> Irrigation</p>
+                <p><strong>Last Date:</strong> 30 Jan 2026</p>
+                <button class="view-btn">View Details</button>
+            </div>
 
-<div class="job-card" data-cat="Punjab">
-  <h3>Lecturer – Punjab Public School</h3>
-  <p>Department: Education</p>
-  <p>Last Date: 28 Jan 2026</p>
-  <a href="job.html">View Details</a>
-</div>
+            <div class="job-card" data-province="kpk">
+                <h3>Junior Clerk – KPK Police</h3>
+                <p><strong>Department:</strong> Police</p>
+                <p><strong>Last Date:</strong> 05 Feb 2026</p>
+                <button class="view-btn">View Details</button>
+            </div>
 
-<div class="job-card" data-cat="Sindh">
-  <h3>Assistant Engineer – Sindh Irrigation</h3>
-  <p>Department: Irrigation</p>
-  <p>Last Date: 30 Jan 2026</p>
-  <a href="job.html">View Details</a>
-</div>
+        </div>
+    </div>
 
-<div class="job-card" data-cat="FPSC">
-  <h3>Clerk – Federal Board</h3>
-  <p>Department: FPSC</p>
-  <p>Last Date: 02 Feb 2026</p>
-  <a href="job.html">View Details</a>
-</div>
+    <script>
+        const searchInput = document.getElementById('jobSearch');
+        const jobCards = document.querySelectorAll('.job-card');
+        const filterButtons = document.querySelectorAll('.filter-btn');
 
-</div>
-</div>
+        // 1. Search Bar Functionality
+        searchInput.addEventListener('input', function() {
+            const searchText = searchInput.value.toLowerCase();
 
-<script>
-function toggleDark(){
-  document.body.classList.toggle("dark");
-}
+            jobCards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const dept = card.querySelector('p').innerText.toLowerCase();
 
-function filterJobs(cat,btn){
-  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+                if (title.includes(searchText) || dept.includes(searchText)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
 
-  document.querySelectorAll('.job-card').forEach(job=>{
-    job.style.display = (cat==='all'||job.dataset.cat===cat) ? 'block':'none';
-  });
-}
+        // 2. Filter Buttons Functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Active button ka style change karne ke liye
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-function searchJobs(){
-  let val=document.getElementById('search').value.toLowerCase();
-  document.querySelectorAll('.job-card').forEach(job=>{
-    job.style.display = job.innerText.toLowerCase().includes(val) ? 'block':'none';
-  });
-}
-</script>
+                const target = button.getAttribute('data-target');
+
+                jobCards.forEach(card => {
+                    const cardProvince = card.getAttribute('data-province');
+
+                    if (target === 'all' || cardProvince === target) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
