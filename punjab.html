@@ -3,26 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punjab Jobs - Pakistan Jobs Portal</title>
-    <!-- Same styles as above, copy from index.html -->
-    <style> /* Paste the full <style> block from index.html here */ </style>
+    <title>Job Details - Lecturer Punjab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .header {
+            background-color: #157a4e;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+        .job-detail-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .job-title {
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-top: 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .info-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        .info-table td:first-child {
+            font-weight: bold;
+            color: #555;
+            width: 40%;
+        }
+        .apply-btn {
+            display: block;
+            background-color: #157a4e;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .apply-btn:hover {
+            background-color: #11643f;
+        }
+    </style>
 </head>
 <body>
-    <nav> <!-- Same nav as above --> </nav>
+
+    <div class="header">
+        <a href="index.html" class="back-btn">⬅️</a>
+        <h2>Job Details</h2>
+    </div>
+
     <div class="container">
-        <h1>Punjab Jobs</h1>
-        <p>Latest job opportunities in Punjab province.</p>
-        <div class="job" style="--delay: 1;">
-            <h3>Government Teacher - Punjab Education</h3>
-            <p>Location: Lahore | Salary: PKR 50,000 | Deadline: 2023-12-31</p>
-            <button class="apply-btn">Apply Now</button>
-        </div>
-        <div class="job" style="--delay: 2;">
-            <h3>Private Accountant - Faisalabad</h3>
-            <p>Location: Faisalabad | Salary: PKR 40,000 | Deadline: 2023-11-20</p>
-            <button class="apply-btn">Apply Now</button>
+        <div class="job-detail-card">
+            <h1 class="job-title">Lecturer – Punjab Public School</h1>
+            <p style="color: #666; font-size: 14px;">Posted on: 15 Jan 2026</p>
+            
+            <hr style="border: 0; border-top: 1px solid #eee;">
+
+            <table class="info-table">
+                <tr>
+                    <td>Department:</td>
+                    <td>Education Department, Punjab</td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>Lahore, Punjab</td>
+                </tr>
+                <tr>
+                    <td>Education required:</td>
+                    <td>MA / MSc / MS / BS (Hons)</td>
+                </tr>
+                <tr>
+                    <td>Total Vacancies:</td>
+                    <td>25 Posts</td>
+                </tr>
+                <tr>
+                    <td>Salary Package:</td>
+                    <td>BPS-17 (Approx. 60,000 PKR)</td>
+                </tr>
+                <tr>
+                    <td>Last Date to Apply:</td>
+                    <td style="color: red; font-weight: bold;">28 Jan 2026</td>
+                </tr>
+            </table>
+
+            <h3>How to Apply?</h3>
+            <p style="font-size: 14px; line-height: 1.5; color: #555;">
+                Interested candidates can apply online through the official website or send their documents along with the application form to the Punjab Education Department headquarters before the deadline.
+            </p>
+
+            <a href="https://www.ppsc.gop.pk" target="_blank" class="apply-btn">Apply Online Now</a>
         </div>
     </div>
-    <footer>&copy; 2023 Pakistan Jobs Portal. All rights reserved.</footer>
+
 </body>
 </html>
