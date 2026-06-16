@@ -153,7 +153,7 @@ body.dark .search-container input {
     <div class="header">
         <h1>PaK Government Jobs</h1>
         <p>Latest Government Jobs in Pakistan</p>
-        <button class="dark-mode-btn">🌙 Dark Mode</button>
+        <button class="dark-mode-btn" id="darkModeToggle">🌙 Dark Mode</button>
     </div>
 
     <div class="nav-tabs">
@@ -250,3 +250,15 @@ body.dark .search-container input {
 
 </body>
 </html>
+// 3. Dark Mode Functionality
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+darkModeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark');
+    
+    if (document.body.classList.contains('dark')) {
+        darkModeToggle.innerHTML = "☀️ Light Mode";
+    } else {
+        darkModeToggle.innerHTML = "🌙 Dark Mode";
+    }
+});
